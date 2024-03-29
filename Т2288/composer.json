@@ -1,0 +1,39 @@
+{
+    "name": "laravel/laravel",
+    "version": "8.x",
+    "require": {
+        "php": "^7.3",
+        "laravel/framework": "^8.x",
+        "laravel/ui": "^3.x",
+    },
+    "require-dev": {
+        "facade/ignition": "^3.x",
+        "fzaninotto/faker": "^1.9",
+        "laravel/pint": "^1.x",
+        "laravel/sail": "^1.x",
+        "phpunit/phpunit": "^9.5",
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\Composer::postInstall",
+            "php artisan key:generate"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\Composer::postUpdate"
+        ]
+    }
+}
